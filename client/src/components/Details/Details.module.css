@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 100vw;
+  min-height: 100vh;
+  background: url(../../assets/images/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-color: var(--color2);
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+}
+
+.btn__back {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  width: 3em;
+  padding: .2em;
+  font-weight: 800;
+  border-radius: .4em;
+  border: 2px solid #fff;
+  background-color:  var(--color1);
+  cursor: pointer;
+  color: #ffff;
+}
+.btn__back:active {
+  transform: scale(0.88);
+  background-color: var(--color4);
+}
+.btn__back:hover {
+  background-color: var(--color2);
+}
+
+.contents {
+  margin-top: 4.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  max-width: min-content;
+  min-height: 70vh;
+  padding: 3em;
+  margin-bottom: 3em;
+  background-color: var(--color1);
+  border: 5px dashed var(--color4) ;
+  border-radius: 20px;
+  letter-spacing: 2px;
+}
+
+.img {
+  min-height: 13em;
+  width: 24em;
+  border: 1px solid var(--color2);
+  border-radius: 10px;
+}
+
+.description {
+  min-height: 20em;
+  width: 24em;
+}
+
+.description > h1 {
+  min-height: 1em;
+  margin-bottom: 0;
+}
+
+.description > ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.description > ul > li {
+  padding: .5em 0 .5em 0;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    font-size: 17px;
+    background-attachment: fixed;
+  }
+  .contents {
+    flex-direction: row-reverse;
+    min-height: auto;
+  }
+  .description {
+  align-self: flex-start;
+  padding-right: 3em;
+}
+  .img {
+    align-self: flex-start;
+  }
+}

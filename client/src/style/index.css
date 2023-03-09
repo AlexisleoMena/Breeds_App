@@ -1,0 +1,29 @@
+@import url(./normalize.css);
+:root {
+  /* --color1: #060606;
+  --color1: #0c253a;
+  --color2: #184377;
+  --color3: #3971be;
+  --color4: #6d98d4; */
+  --color1: #0c478a;
+  --color2: #0a5f9e;
+  --color3: #0986b4;
+  --color4: #07bec5;
+  --color5: #03fdbc;
+}
+a {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
