@@ -1,6 +1,8 @@
 const axios = require("axios");
 const { Breed, Temperament } = require("../db.js");
 const { v4: uuidv4, validate } = require("uuid");
+const path = require("path");
+const fs = require("fs/promises");
 
 function valuesToReturnFromTheAPI(obj) {
   let weights = obj.weight.imperial.split(/\s\-\s|\s\–\s/);
@@ -22,8 +24,16 @@ function valuesToReturnFromTheAPI(obj) {
 }
 
 async function APIsbreeds() {
-  let { data } = await axios("https://api.thedogapi.com/v1/breeds");
-  return data.map(valuesToReturnFromTheAPI)
+  try {
+    // let { data } = await axios("https://api.thedogapi.com/v1/breeds");
+    const filePath = path.join(__dirname, "../../data.json");
+    const data = await fs.readFile(filePath, "utf8");
+    const parsedData = JSON.parse(data);
+    return parsedData.map(valuesToReturnFromTheAPI);
+  } catch (error) {
+    console.error("Error al leer el archivo JSON local:", error);
+    return [];
+  }
 }
 
 function valuesToReturnFromTheDB(flattenedObject) {
